@@ -5,8 +5,9 @@ def unique_n(A):#O(n^2)
 	answer="*"#답을 출력할 변수 Answer 지정
 	for i in range(len(A)):
 		for j in range(len(A)):
-			if A[i]==A[j]: # list A 안에 동일한 원소가 한쌍이라도 존재할 경우 -> No 저장
-				answer="No"
+			if i!=j:
+				if A[i]==A[j]: # list A 안에 동일한 원소가 한쌍이라도 존재할 경우 -> No 저장
+					answer="No"
 			else: #list A 내의 모든 원소가 다를 경우 -> Yes 저장
 				answer="Yes"
 	return answer #결과값 출력
@@ -40,13 +41,35 @@ n = int(input())
 # -n과 n 사이의 서로 다른 값 n 개를 랜덤 선택해 A 구성
 A = random.sample(range(-n, n+1), n)
 
+#시간측정
+s1=time.time()
 result1= unique_n(A)
+e1= time.time()
+
+s2=time.time()
 result2= unique_nlogn(A)
+e2= time.time()
+
+s3=time.time()
 result3= unique_n2(A)
+e3= time.time()
+
+time1=(e1-s1)
+time2=(e2-s2)
+time3=(e3-s3)
 
 print(result1, result2, result3)
+print('수행시간=', time1, time2, time3)
 
 # 위의 세 개의 함수를 차례대로 불러 결과 값 출력해본다
 # 당연히 모두 다르게 sample했으므로 YES가 세 번 연속 출력되어야 한다
 # 동시에 각 함수의 실행 시간을 측정해본다
 # 이러한 과정을 n을 100부터 10만까지 다양하게 변화시키면서 측정한다
+
+
+#측정시간 기록:
+#
+
+
+
+
