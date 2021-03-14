@@ -11,18 +11,26 @@ def solution():
     asw=list(map(int,asw))
     score=list(map(int,score))
     
-    result=[0]*num_Paper #맞춘 문제의 수 기록
     num_Test=len(asw) #문제의 문항수
+    error=[0]*num_Test #문항 수 만큼 원소 생성
     for i in range(num_Test):
         for k in range(num_Paper): #문제지 번호 측정용
-            if submit[k][i] != asw[i]: #각 문제지 별로 답이 맞는 지 확인
-                result[k]+=1*score[i] #맞은 문제별 배점을 고려한 점수 기록
-    result=list(map(int,result))
+            if submit[k][i] != asw[i]: #각 문제지 별로 틀린 문항 확인
+                error[i]+=1  #문항별(index) 틀린 문제 기록
+    print(error)
 
-    winner_Score=max(result)
-    winner_Num=result.index(winner_Score)+1 #index는 기본적으로 0부터 n-1까지 이므로 제출한 시험지의 순서를 1~n이라고 보았을 때, +1 처리
+    for i in range(num_Test):
+        e=error[i]
+        error[i]=[i+1,e]#각 원소 i 별 [문항번호, 틀린 횟수]
 
-    return winner_Num , winner_Score 
+    for i in range(num_Test):
+        if       
+    #error=list(map(int,error))
+    
+    error_Score=max(error)
+    error_Num=error.index(error_Score)+1 #index는 기본적으로 0부터 n-1까지 이므로 제출한 시험지의 순서를 1~n이라고 보았을 때, +1 처리
+
+    return error_Num , error_Score 
 
 if __name__=="__main__":
     sol=solution()

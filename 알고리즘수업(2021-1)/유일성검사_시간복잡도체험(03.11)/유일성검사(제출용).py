@@ -15,8 +15,8 @@ def unique_n(A):#O(n^2)
 def unique_nlogn(A):#O(nlogn)
 	# code
 	answer="Yes"#answer의 기본값은 Yes로 지정
+	A.sort() #nlogn 의 big-O 복잡도 이미 생성
 	for i in range(len(A)): # 각 원소 수만큼의 i를 호출
-		A.sort() #nlogn 의 big-O 복잡도 이미 생성
 		if i < len(A)-1:
 			if A[i]==A[i+1]:
 				answer="No"
@@ -37,32 +37,32 @@ def unique_n(A): #O(n)
 		
 	
 # input: 값의 개수 n
-n = int(input())
+n = int(input('측정할 n의 값을 입력하시오: '))
 # -n과 n 사이의 서로 다른 값 n 개를 랜덤 선택해 A 구성
 A = random.sample(range(-n, n+1), n)
-result1= unique_n(A)
-result2= unique_nlogn(A)
-result3= unique_n(A)
-print(result1, result2, result3)
 
 ###########시간측정###########
-s1=time.time()
+s1=time.process_time()
 result1= unique_n(A)
-e1= time.time()
+e1= time.process_time()
 
-s2=time.time()
+s2=time.process_time()
 result2= unique_nlogn(A)
-e2= time.time()
+e2= time.process_time()
 
-s3=time.time()
+s3=time.process_time()
 result3= unique_n(A)
-e3= time.time()
+e3= time.process_time()
 
-time1=e1-s1
-time2=e2-s2
-time3=e3-s3
+time1=(e1-s1)+10000
+time2=(e2-s2)+10000
+time3=(e3-s3)+10000
 
-print('수행시간=', time1, round(time2,50), round(time3,50))
+print(result1 ,result2, result3)
+print('<수행시간>')
+print('unique_n(A) = ',time1)
+print('unique_nlogn(A) = ', time2)
+print('unique_n(A) = ', time3)
 
 # 위의 세 개의 함수를 차례대로 불러 결과 값 출력해본다
 # 당연히 모두 다르게 sample했으므로 YES가 세 번 연속 출력되어야 한다
@@ -71,7 +71,10 @@ print('수행시간=', time1, round(time2,50), round(time3,50))
 
 
 #측정시간 기록:
-#
+#10 입력 시
+#unique_n(A) =
+#unique_nlogn(A) =
+#unique_n(A) =
 
 
 

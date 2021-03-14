@@ -17,9 +17,8 @@ def solution(n, lost, reserve):
             stu[num-1]+=1 #여유 분이 있는 학생의 체육복 추가
 
     answer1 = [0] * n #체육복을 입을 수 있는 학생 수 기록용1
-    asr1=0
     answer2 = [0] * n #체육복을 입을 수 있는 학생 수 기록용2
-    asr2=0
+    result =0 #최종 수업이 가능한 학생 수 
     
     for i in range(n):#0~ n-2까지의 범위 (작은 원소에서 뒤의 원소 비교)
         if i==0: #첫번째 학생의 경우
@@ -29,34 +28,30 @@ def solution(n, lost, reserve):
             if stu[i] >=1:
                 answer1[i]+=1 
                 if stu[i]>1:#stu[i]>1 (여유분이 있는 경우) 
-                    if stu[i-1]==0:
+                    if stu[i-1]<1:
                         answer1[i-1]+=1
-    print(answer1)
+
+    #print(answer1)                    
     for i in range(n):#0~ n-2까지의 범위 (작은 원소에서 뒤의 원소 비교) 
         if i!=n-1:
             if stu[i] >=1:
                 answer2[i]+=1 
                 if stu[i]>1:#stu[i]>1 (여유분이 있는 경우) 
-                    if stu[i+1]==0:
+                    if stu[i+1]<1:
                         answer2[i+1]+=1
 
         else: #마지막번째 학생의 경우
             if stu[i]>=1:
                 answer2[i]+=1
+    #print(answer2)     
 
-    print(answer2)
-    
-    answer3=[0]* n
     for i in range(n):
+        if answer1[i]>=1 or answer2[i]>=1:
+            result+=1
+        if (answer1[i]<1 and answer2[i]>=1) or (answer1[i]>1 and answer2[i]<=1) :
+            result+=-1
         
-
-        if answer1[i] >=1:
-            asr1+=1
-        if answer2[i] >=1:
-            asr2+=1
-        #if answer1[i］
-
-    result= max(asr1,asr2)
+    result=int(result)
     return result          
 
 
