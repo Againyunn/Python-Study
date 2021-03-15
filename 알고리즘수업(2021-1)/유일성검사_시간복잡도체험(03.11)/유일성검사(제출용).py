@@ -1,6 +1,6 @@
 import random, time
 
-def unique_n(A):#O(n^2)
+def unique_n2(A):#O(n^2)
 	# code
 	answer="*"#답을 출력할 변수 Answer 지정
 	for i in range(len(A)):
@@ -43,7 +43,7 @@ A = random.sample(range(-n, n+1), n)
 
 ###########시간측정###########
 s1=time.process_time()
-result1= unique_n(A)
+result1= unique_n2(A)
 e1= time.process_time()
 
 s2=time.process_time()
@@ -54,13 +54,13 @@ s3=time.process_time()
 result3= unique_n(A)
 e3= time.process_time()
 
-time1=(e1-s1)+10000
-time2=(e2-s2)+10000
-time3=(e3-s3)+10000
+time1=(e1-s1)
+time2=(e2-s2)
+time3=(e3-s3)
 
 print(result1 ,result2, result3)
 print('<수행시간>')
-print('unique_n(A) = ',time1)
+print('unique_n2(A) = ',time1)
 print('unique_nlogn(A) = ', time2)
 print('unique_n(A) = ', time3)
 

@@ -17,20 +17,27 @@ def solution():
         for k in range(num_Paper): #문제지 번호 측정용
             if submit[k][i] != asw[i]: #각 문제지 별로 틀린 문항 확인
                 error[i]+=1  #문항별(index) 틀린 문제 기록
-    print(error)
 
     for i in range(num_Test):
         e=error[i]
         error[i]=[i+1,e]#각 원소 i 별 [문항번호, 틀린 횟수]
 
-    for i in range(num_Test):
-        if       
-    #error=list(map(int,error))
-    
-    error_Score=max(error)
-    error_Num=error.index(error_Score)+1 #index는 기본적으로 0부터 n-1까지 이므로 제출한 시험지의 순서를 1~n이라고 보았을 때, +1 처리
+    rank=sorted(error, key = lambda x :x[1], reverse = True)
+    #rank.sort(reverse = True)
 
-    return error_Num , error_Score 
+    result=[]#결과 값을 담을 list (최고 오답률 문항이 여러개인 경우 )
+    max=0 #최대 오답 기록
+
+    for i in range(len(rank)):
+        if i==0:
+            max=rank[0][1]#오답률 기준 내림차순으로 정렬된 원소의 최고(가장 먼저 값)을 max로 우선 지정
+            result.append(rank[0][0]) #첫번째 문항의 번호를 result의 원소로 추가
+        if i!=0: #i가 0이 아닌 모든 경우
+            if rank[i][1]>=max: #만약 각 원소가 max와 같거나 더 크다면
+                result.append(rank[i][0]) #max와 값이 같은 문항을 result의 원소로 추가
+            max=max    
+
+    return result
 
 if __name__=="__main__":
     sol=solution()
