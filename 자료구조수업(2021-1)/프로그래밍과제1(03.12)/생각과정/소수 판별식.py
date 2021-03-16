@@ -38,7 +38,6 @@ def solution(n):
                 break 
         break
     answer.append(result[i])
-    
     answer1=answer[0][0]
     answer2=answer[0][1]
 
