@@ -35,9 +35,9 @@ def solution(n, lost, reserve):
                     stu[i-1]+=1 #받은 여유분 추가
             
             if answer1[i]==0 and stu[i+1]>1: #뒤의 원소에 여유분이 있는 경우
-                if stu[i]>1: #현 워소에 여유분 있는 경우
+                if stu[i]>1: #현 원소에 여유분 있는 경우
                     answer1[i]=1
-                if stu[i]==0: #현워소에 여유분 x
+                if stu[i]==0: #현원소에 여유분 x
                     stu[i+1]-=1 #준여유분 제외
                     answer1[i]=1 #받은 여유분 추가
                     stu[i]+=1
