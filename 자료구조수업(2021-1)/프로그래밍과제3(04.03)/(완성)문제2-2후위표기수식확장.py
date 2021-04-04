@@ -39,25 +39,25 @@ def evalPostfix(expr):
             #print(f'val1 : {val1} , val2 : {val2}')
             if (token =='+'): 
                 if val1==0:
-                    answer='error'
+                    answer='error1'
                     return answer
                 i = val1+val2
                 s.push(i)
             elif (token =='-'):
                 if val1==0:
-                    answer='error'
+                    answer='error1'
                     return answer
                 i = val1-val2
                 s.push(i)
             elif (token =='*'):
                 if val1==0:
-                    answer='error'
+                    answer='error1'
                     return answer
                 i = val1 * val2
                 s.push(i)
             elif (token =='//'):
                 if val1==0:
-                    answer='error'
+                    answer='error1'
                     return answer
                 i = val1 // val2
                 s.push(i)
@@ -71,7 +71,7 @@ def evalPostfix(expr):
                     elif t1%t1!=0:
                         answer=float(t1)
                 elif t2!='fail': #연산을 모두 했음에도 불구하고 피연산자가 스택에 남은 경우
-                    answer='error'
+                    answer='error2'
                 return answer
             s.push(float(token))
     
