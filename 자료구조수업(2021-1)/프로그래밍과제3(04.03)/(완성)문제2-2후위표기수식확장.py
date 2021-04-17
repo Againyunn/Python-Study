@@ -1,3 +1,5 @@
+import re
+
 class Stack:
     def __init__ (self):
         self.items=[]
@@ -76,6 +78,18 @@ def evalPostfix(expr):
             s.push(float(token))
     
 
-expr=input("테스트 할 괄호를 입력하시오 : ").split()
+rare=input()
+expr=[]
+for i in rare:
+    num=''
+    if i == re.compile('\d'):
+        num+=i
+    expr.append(num)
+    if i != re.compile('\d') and i!=re.compile('\s'):
+        expr.append(i)
+expr=str(expr)
+
+
+print(expr)
 sol=evalPostfix(expr)
 print(sol)

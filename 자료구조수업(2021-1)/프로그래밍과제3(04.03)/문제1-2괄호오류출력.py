@@ -24,6 +24,7 @@ def parenthsesBalance(string):
     s=Stack()
     openParenthesis = '({['
     closeParenthesis = ']})'
+    error=['error1','error2','error3','error4','error5','error6']
     success=1
     fail=0
 
@@ -34,15 +35,31 @@ def parenthsesBalance(string):
             s.push(ch)
         elif ch in closeParenthesis: #ch가 '공백'이거나 '닫는 괄호 중 하나'인 경우
             if s.isEmpty()==True: #스택이 비어있는 경우
-                return fail
+                if ch =='(':
+                    return i ,error[3]
+                elif ch =='{':
+                    return i ,error[4]
+                elif ch =='[':
+                    return i ,error[5]
+                elif ch ==')':
+                    return i, error[0]
+                elif ch =='}':
+                    return i, error[1]
+                elif ch ==']':
+                    return i, error[2]
             else: #스택이 비어있지 않은 경우
                 openCh=s.pop() 
-                if (ch==')' and openCh !='(' or ch=='}' and openCh !='{' or ch ==']' and openCh !='[' or openCh=="True"):
-                    return fail
+                if (ch==')' and openCh !='(') :
+                    return i ,error[0]
+                elif ch=='}' and openCh !='{':
+                    return i ,error[1]
+                elif ch ==']' and openCh !='[' :
+                    return i ,error[2]
+
 
     #print(s.tt())
     return int(s.isEmpty())
 
-string=input("테스트 할 괄호를 입력하시오 : ")
+string=input()
 sol=parenthsesBalance(string)
 print(sol)
