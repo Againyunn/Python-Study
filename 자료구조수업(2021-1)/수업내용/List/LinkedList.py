@@ -28,14 +28,71 @@ class LinkedList_JavaVersion: #Stack형태
                 currentNode=currentNode.link
             return currentNode.data
 
+
+
+####스택 형식의 단순연결리스트####
+class LinkedStack:
+    def __init__ (self):
+        self.top = None
+    
+    def isEmpty(self):
+        return self.top == None
+    
+    def push(self, e):
+        newNode = Node(e)
+        newNodd.link= self.top
+        self.top = newNode
+    
+    def pop(self):
+        if(self.isEmpty()):
+            print("Stack is empty")
+            return
+        e = self.top.data
+        self.top.data
+        return e
+
+
+####큐 형식의 단순연결리스트####
+class LinkedQueue:
+    def __init__ (self):
+        self.front = self.rear = None
+    
+    def isEmpty(self):
+        return self.front==None
+
+    def enqueue(self):
+        newNode= Node(e)
+        if self.front == None:
+            self.front = self.rear = newNode
+            return
+        else:
+            self.rear.link=newNode
+            self.rear= newNode
+
+    def dequeue(self):
+        if self.isEmpty():
+            print("Queue is empty")
+            return
+        
+        e= self.front.data
+        self.front= self.front.link
+        if self.front == None:
+            self.rear = None
+        
+        return e
+
 #####수업시간의 내용####### (교수님 방식)
 class LinkedList:
     def __init__(self):
         self.head=None
+        self.length=0
+
     def isEmpty(self):
         return self.head == None
+
     def clear(self):
         self.head = None
+
     def size(self):
         if self.head==None:
             return 0
@@ -47,13 +104,16 @@ class LinkedList:
                 currentNode=currentNode.link
             return count
 
-    def sizeRecursion(self, node):
+    def size2(self):
+        return length
+
+    def sizeRecursion(self, node): #재귀이용
         if node ==None:
             return 0
         else:
             return self.sizeRecur(node.link)+1
     
-    def sizeRecur(self):
+    def sizeRecur(self): #재귀이용
         return self.sizeRecursion(self.head)
 
     def printAll(self):
@@ -77,6 +137,21 @@ class LinkedList:
             pos-=1 #제어자 역할
         return currentNode
 
+
+    def getNodeRecur(self, pos):
+        return self.recurGetNode(self.head, pos)
+
+    def recurGetNode(self, node, pos):
+        if pos <0:
+            return None
+        elif pos ==0:    #pod = 0이면 node가 참조하는 노드를 반환
+            return node
+        else:
+            return self.recurGetNode(node, pos-1)
+
+
+
+
     def getEntry(self, pos):
         currentNode = self.getNode(pos) #getNode 메소드에 return 값이 currentNode.data가 아닌 이유
         if currentNode ==None:
@@ -87,6 +162,7 @@ class LinkedList:
     def insert(self, pos, element):
         currentNode=Node(element)
         before = self.getNode(pos-1)
+        length+=1
         if before == None: #기존에 저장된 Node가 없는 경우
             currentNode.link = self.head #self.head = Noen 상태인데, 어차피 첫번째 노드의 link는 비어있으므로 None 값을 저장
             self.head=currentNode #head에 새로운 Node의 값 추가
@@ -96,6 +172,7 @@ class LinkedList:
 
     def delete(self, pos):
         before= self.getNode(pos-1)
+        length-=1
         if before ==None:
             if self.head is not None:
                 self.head= self.head.link
@@ -115,12 +192,26 @@ class LinkedList:
         
     def printAllRecur(self):
         self.printRecur(self.head)
+    
+    def length(self): # 내 방식의 원소 개수 측정
+        currentNode=self.head
+        count=0
+        while currentNode.link!=None:
+            count+=1
+            currentNode=currentNode.link
+        return count
+    
 
-if __name__ == 'Main':
-    print("start")
-    L=LinkedList_JavaVersion()
-    L.insert(1)
-    L.insert('b')
-    L.insert('c')
-    answer=L.pop()
-    print(answer)
+
+#if __name__ == 'Main':
+print("start")
+#L=LinkedList_JavaVersion()
+L=LinkedList()
+L.insert(0,1)
+L.insert(1,'b')
+L.insert(2,'c')
+#answer=L.pop()
+answer=L.delete(2)
+#print(answer)
+length=L.length()
+print(f"연결리스트의 원소 개수 : {length}")

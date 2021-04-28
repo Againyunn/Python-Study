@@ -1,6 +1,6 @@
 #원형 큐 클래스 구현(index 0부터 시작)
 class Queue1:
-    MAX_QSIZE = 100
+    MAX_QSIZE = 100 #고정된 배열 형태이므로 초기 리스트의 원소 량을 지정해준다.
     def __init__(self):
         self.items=[None]*Queue1.MAX_QSIZE
         self.front=-1 #시작점
@@ -33,6 +33,7 @@ class Queue1:
         else:
             self.front = (self.front+1)%(len(self.items))
             e=self.items[self.front]
+            self.itmes[self.front]=None #이 부분이 누락된 것 같아 추가함(04.28)
             self.size-=1
             return e
 
@@ -92,6 +93,7 @@ class Queue2:
         else:
             self.front = (self.front+1)%(len(self.items))
             e=self.items[self.front]
+            self.itmes[self.front]=None #이 부분이 누락된 것 같아 추가함(04.28)
             self.size-=1
             return e
 
@@ -122,3 +124,11 @@ class Queue2:
                 self.items[i-1] = None
             return
 
+##테스트 프로그램##
+q= Queue1()
+q.enqueue(10)
+q.enqueue(20)
+q.enqueue(30)
+e= q.dequeue()
+print(e)
+q.enqueue(40)
