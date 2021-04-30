@@ -10,23 +10,42 @@ class LinkedList_JavaVersion: #Stack형태
 
     def insert(self, e):
         newNode=Node(e)
-        print(e)
         if self.head==None: #head가 비어있을 때
             self.head=newNode
         else:
             currentNode=self.head
             while currentNode.link!=None:
                 currentNode=currentNode.link
-            currentNode.link=newNode.link
+            currentNode.link=newNode
     
     def pop(self):
         if self.head==None:
             return print("LinkedList has no elements")
+
+        elif self.head.link == None:
+            print(self.head.link.data)
+            self.head=None
+
         else:
             currentNode=self.head
             while currentNode.link!=None:
                 currentNode=currentNode.link
-            return currentNode.data
+            print(currentNode.data)
+            currentNode.data=None
+            currentNode.link=None
+    
+    def printJava(self):
+        if self.head == None:
+            print("LinkedList has no elements")
+        else:
+            currentNode=self.head
+            while currentNode.link!=None:
+                print(currentNode.data)
+                currentNode=currentNode.link
+            print(currentNode.data)
+            
+               
+            
 
 
 
@@ -111,7 +130,7 @@ class LinkedList:
         if node ==None:
             return 0
         else:
-            return self.sizeRecur(node.link)+1
+            return self.sizeRecursion(node.link)+1
     
     def sizeRecur(self): #재귀이용
         return self.sizeRecursion(self.head)
@@ -136,6 +155,17 @@ class LinkedList:
             currentNode=currentNode.link
             pos-=1 #제어자 역할
         return currentNode
+
+    def getNode2(self, pos):
+        if pos<0:
+            return None
+        currentNode = self.head
+        i =0
+        for i in range(pos):
+            if currentNode != None:
+                currentNode=currentNode.link
+        return currentNode
+
 
 
     def getNodeRecur(self, pos):
@@ -162,7 +192,7 @@ class LinkedList:
     def insert(self, pos, element):
         currentNode=Node(element)
         before = self.getNode(pos-1)
-        length+=1
+        self.length+=1
         if before == None: #기존에 저장된 Node가 없는 경우
             currentNode.link = self.head #self.head = Noen 상태인데, 어차피 첫번째 노드의 link는 비어있으므로 None 값을 저장
             self.head=currentNode #head에 새로운 Node의 값 추가
@@ -172,7 +202,7 @@ class LinkedList:
 
     def delete(self, pos):
         before= self.getNode(pos-1)
-        length-=1
+        self.length-=1
         if before ==None:
             if self.head is not None:
                 self.head= self.head.link
@@ -205,13 +235,19 @@ class LinkedList:
 
 #if __name__ == 'Main':
 print("start")
-#L=LinkedList_JavaVersion()
-L=LinkedList()
-L.insert(0,1)
-L.insert(1,'b')
-L.insert(2,'c')
-#answer=L.pop()
-answer=L.delete(2)
+L=LinkedList_JavaVersion()
+#L=LinkedList()
+L.insert(1)
+L.insert('b')
+L.insert('c')
+#print(L.getNode(1))
+#print(L.getNode2(1))
+#print(L.sizeRecur())
+L.printJava()
+L.pop()
+L.pop()
+#answer=L.delete(2)
 #print(answer)
-length=L.length()
-print(f"연결리스트의 원소 개수 : {length}")
+#print(answer2)
+#length=L.length()
+#print(f"연결리스트의 원소 개수 : {length}")

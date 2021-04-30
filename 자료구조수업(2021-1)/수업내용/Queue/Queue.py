@@ -53,6 +53,7 @@ class Queue1:
         return self.items[self.front]
 
     def size(self): #Queue의 원소 개수 반환
+        answer = int(self.size)
         return self.size
     
     def clear(self): #Queue 초기화
@@ -125,6 +126,7 @@ class Queue2:
             return
 
 ##테스트 프로그램##
+"""
 q= Queue1()
 q.enqueue(10)
 q.enqueue(20)
@@ -132,3 +134,12 @@ q.enqueue(30)
 e= q.dequeue()
 print(e)
 q.enqueue(40)
+"""
+values= Queue1()
+for i in range(20):
+    if i%3 ==0:
+        values.enqueue(i)
+        print(i)
+#s=values.size()
+#print(s)
+
