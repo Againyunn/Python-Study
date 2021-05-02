@@ -1,7 +1,11 @@
 # 다리 길이 w = 한번에 다리에 올라갈 수 있는 트럭의 수 w
 # 트럭은 한번에 1만큼 이동가능
 # 다리에 올라간 트럭들의 무게 <= 다리의 최대하중 L
-# 트럭의 이동 시간 second
+
+# 우선 단순히 무게만 주어지는 트럭의 정보에 한 가지를 더 포함시켰다. 
+# 다리에 올라간 순간 다리에 오른 시간을 현재 시간으로 한다. 
+# 그리고 올라간 시간에 다리 길이를 더한 값보다 지금 시간이 크다면 그 트럭을 다리에서 제거했다. 
+# 이것을 다리와 대기 리스트에 트럭이 없을 때 까지 반복한다.
 
 class bridgeQueue:
     def __init__(self, bridgeSize, bridgeWeight):
@@ -35,6 +39,18 @@ class bridgeQueue:
     def elementsNum(self): #Queue의 원소 개수 반환
         answer = int(self.size)
         return self.size
+    
+    def clear(self): #Queue 초기화
+        if self.size==0: #Queue가 이미 비어있을 경우
+            return
+        
+        else: #Queue에 원소가 있는 경우
+            self.items=[]
+            return
+    
+    def peek(self): #Queue의 첫번째 원소를 삭제하지 않고 반환
+        return self.items[self.front+1]
+    
 
 i=input().split()
 information=list(map(int,i))
@@ -46,9 +62,7 @@ bridgeWeight=information[2]
 B=bridgeQueue(bridgeSize,bridgeWeight)
 second=0
 
-second= second + bridgeSize #트럭이 다리를 지나는 시간 추가(트럭들이 중복으로 진입, 빠져나가는 시간은 고려했으므로 다리 자체를 지나는 시간 기록)
-
-for truck in truckWeight:
+for trcuk in truckWeight:
 
     while truck != 0: #i번째 트럭의 무게 확인 
         if B.elementsNum() == bridgeSize : #다리에 트럭이 가득 찬 경우
@@ -62,6 +76,7 @@ for truck in truckWeight:
             B.enqueue(0) #임의 값 0입력
             second+=1 # 트럭이 빠져나오는 1초 추가
 
+second= second + bridgeSize #트럭이 다리를 지나는 시간 추가(트럭들이 중복으로 진입, 빠져나가는 시간은 고려했으므로 다리 자체를 지나는 시간 기록)
 print(second)
             
 
