@@ -44,7 +44,7 @@ class LinkedList:
 
         else:
             while currentNode.link.link!=None:
-                if currentNode.data == studentNum:
+                if currentNode.link.data == studentNum:
                     temp= currentNode.link.link
                     currentNode.link= temp
                     return
@@ -72,6 +72,7 @@ class LinkedList:
                 elements.append(currentNode.data)
                 currentNode=currentNode.link
             elements.append(currentNode.data)
+            elements.sort()
             return elements
 
 L = LinkedList()   
