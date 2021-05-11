@@ -99,31 +99,3 @@ while True:
     else:
         continue
 
-
-    """
-    def getNode(self, pos): #getEntry 호출을 위한 Node 전체(link 와 data)를 불러오는 메소드
-        if pos<0:
-            return None
-        currentNode = self.head
-        while pos>0 and currentNode!=None:
-            currentNode=currentNode.link
-            pos-=1 #제어자 역할
-        return currentNode
-
-    def getNode2(self, pos):
-        if pos<0:
-            return None
-        currentNode = self.head
-        i =0
-        for i in range(pos):
-            if currentNode != None:
-                currentNode=currentNode.link
-        return currentNode
-
-    def getEntry(self, pos):
-        currentNode = self.getNode(pos) #getNode 메소드에 return 값이 currentNode.data가 아닌 이유
-        if currentNode ==None:
-            return None
-        else:
-            return currentNode.data
-    """

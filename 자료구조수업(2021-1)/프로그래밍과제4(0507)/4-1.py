@@ -19,8 +19,9 @@ class LinkedStack:
         if(self.isEmpty()):
             print("Stack is empty")
             return
+            
         e = self.top.data
-        self.top.data
+        self.top=self.top.link
         return e
 
 def solution(string):
