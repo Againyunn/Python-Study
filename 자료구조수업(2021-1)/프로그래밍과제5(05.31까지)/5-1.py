@@ -72,7 +72,6 @@ class BST:
         else:
             return self._subtreeCountLeaf(p.left) + self._subtreeCountLeaf(p.right)
 
-    
     def printAll(self):
         global BinarySearchTree
 
@@ -83,7 +82,6 @@ class BST:
             BinarySearchTree.sort()
         else:
             BinarySearchTree= 0
-        
         return BinarySearchTree
 
     def _subtreePreorder(self, node):
@@ -109,7 +107,7 @@ while True:
        # 수강자리스트의 원소 수를 출력: T.size() 출력
     elif command[0] == 'P':
         if T.printAll() == 0:
-            print("LinkedList doesn't have any elements")
+            print("BinarySearchTree doesn't have any elements")
         else:
             print(" ".join(T.printAll()))
        # 수강자리스트의 원소들을 오름차순으로 출력: T.print()
