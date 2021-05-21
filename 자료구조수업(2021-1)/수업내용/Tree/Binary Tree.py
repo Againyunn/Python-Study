@@ -8,7 +8,7 @@ class BinaryTree:
     def __init__(self):
         self.root = None
 
-    def binarySearch(self, a, key): #반복문 활용 이진탐색
+    def binarySearch(self, a, key): #반복문 활용 이진탐색    a = 원소 개수 , key = 조회할 원소 원소 index
         left =0
         right = len(a)-1
 
@@ -22,6 +22,11 @@ class BinaryTree:
             else:
                 left = mid + 1
             return False
+
+    def binarySearchRecursion(self, a, key):
+        return binarySearchRecur(a, key, self.left, self.right) 
+        #만약 재귀로 값을 호출했을 때 문제 발생 시, left / right 값 오류로 인한 문제임을 인지
+        #문제 발생 시 def binarySearchRecursion함수 삭제
 
     def binarySearchRecur(self, a, key, left, right): #재귀 활용 이진탐색
         if left > right:
