@@ -8,7 +8,6 @@ class Treenode:
 class BST:
     def __init__ (self):
         self.root = None
-
     def saerch1(self, key): #반복문 활용 탐색
         node = self.root
         while node is not None: #leaf node 이후에 None 값을 갖는 node가 아닐 경우 반복 순환(if문들에 의해 대상이 되는 node가 바뀜)
