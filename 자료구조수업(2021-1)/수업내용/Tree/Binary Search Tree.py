@@ -83,7 +83,7 @@ class BST:
         if node.left == None:
             return node
         else:
-            return self._minNode(node.left)
+            return self._minNodeRecur(node.left)
         
     def delete(self, key):
         self.root = self.deleteNode(self.root, key)
@@ -110,7 +110,7 @@ class BST:
             node.key = rightMinNode.key
             node.value = rightMinNode.value
 
-            node.right = self._deleteNOde(node.right, node.key)
+            node.right = self._deleteNode(node.right, node.key)
             return node
 
             

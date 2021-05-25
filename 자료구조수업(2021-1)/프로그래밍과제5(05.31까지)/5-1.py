@@ -52,8 +52,14 @@ class BST:
             rightMinNode = self._minNode(node.right)
             node.st_id = rightMinNode.st_id
 
-            node.right = self._deleteNOde(node.right, node.st_id)
+            node.right = self._deleteNode(node.right, node.st_id)
             return node
+    
+    def _minNode(self, node): #최소키 노드를 반환하는 함수(재귀)
+        if node.left == None:
+            return node
+        else:
+            return self._minNode(node.left)
     
     def size(self):
         return self._subtreeSize(self.root)
@@ -80,9 +86,11 @@ class BST:
             temp = set(BinarySearchTree)
             BinarySearchTree = list(temp)
             BinarySearchTree.sort()
+            answer = BinarySearchTree
+            BinarySearchTree = []
         else:
-            BinarySearchTree= 0
-        return BinarySearchTree
+            answer= 0
+        return answer
 
     def _subtreePreorder(self, node):
         global BinarySearchTree

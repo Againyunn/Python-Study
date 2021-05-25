@@ -45,14 +45,14 @@ class BST:
     def _addBook(self, node, bookNum, num):
         if node is None: #재고로 입력된 "도서번호"와 같은 도서번호를 가진 목록이 없는 경우 "error: 2"
             print("error: 2")
-            return None
+            return 
         elif bookNum == node.bookNum:
             node.num = int(node.num)
             num = int(num)
             node.num += num
             node.num = str(node.num)
             return  #return 내용물은 없애도 된다.
-        elif bookNum > node.bookNum:
+        elif bookNum < node.bookNum:
             return self._addBook(node.left, bookNum, num)
         else:
             return self._addBook(node.right, bookNum, num)
@@ -70,12 +70,13 @@ class BST:
             num = int(num)
             if node.num >= num: #재고수량< 판매수량인 경우: 재고수량보다 더 많은 부수를 판매할 수 없으므로
                 node.num -= num
-                self.rootSaled=self._insertSaledBook(node, node.bookNum, node.bookName, node.price, node.num)
+                num = str(num)
+                self.rootSaled = self._insertSaledBook(node, node.bookNum, node.bookName, node.price, num)#num : 판매된 도서 부수
             else:
                 print("error: 3")
             node.num = str(node.num)
             return  #return 내용물은 없애도 된다.
-        elif bookNum > node.bookNum:
+        elif bookNum < node.bookNum:
             return self._saledBook(node.left, bookNum, num)
         else:
             return self._saledBook(node.right, bookNum, num)
@@ -100,18 +101,18 @@ class BST:
     
     #재고도서 삭제
     def delete(self, bookNum):
-        self.root = self.deleteNode(self.root, bookNum)
+        self.root = self._deleteNode(self.root, bookNum)
     
     def _deleteNode(self, node, bookNum):
         if node == None:
             print("error: 2")
-            return None
+            return 
 
         if bookNum < node.bookNum:
             node.left = self._deleteNode(node.left, bookNum)
             return node
 
-        elif bookNum > node.key:
+        elif bookNum > node.bookNum:
             node.right = self._deleteNode(node.right, bookNum)
             return node
         
@@ -123,9 +124,11 @@ class BST:
             
             rightMinNode = self._minNode(node.right)
             node.bookNum = rightMinNode.bookNum
-            node.value = rightMinNode.value
+            node.bookName = rightMinNode.bookName
+            node.price = rightMinNode.price
+            node.num = rightMinNode.num
 
-            node.right = self._deleteNOde(node.right, node.bookNum)
+            node.right = self._deleteNode(node.right, node.bookNum)
             return node
 
     def _minNode(self, node): #최소키 노드를 반환하는 함수(반복)
@@ -135,81 +138,133 @@ class BST:
             node = node.left
         return node
 
-    def _minNodeRecur(self, node): #최소키 노드를 반환하는 함수(재귀)
-        if node.left == None:
-            return node
-        else:
-            return self._minNode(node.left)
-
+#재고검색 연산
     def search(self, bookNum):
         return self._searchBook(self.root, bookNum)
     
     def _searchBook(self, node, bookNum):
         if node is None: #재고로 입력된 "도서번호"와 같은 도서번호를 가진 목록이 없는 경우 "error: 2"
             print("error: 2")
-            return None
+            return 
         elif bookNum == node.bookNum:
             answer =[]
             answer.append(node.bookNum)
             answer.append(node.bookName)
             answer.append(node.price)
             answer.append(node.num)
-            return answer 
-        elif bookNum > node.bookNum:
+            return answer
+        elif bookNum < node.bookNum:
             return self._searchBook(node.left, bookNum)
         else:
             return self._searchBook(node.right, bookNum)
 
     def printAll(self):
-        return
+        global stockBook #재고목록의 책을 담을 임시 전역변수 stockBook
+
+        self._stockBookPreorder(self.root)
+        if stockBook!=[]:
+            list(set([tuple(set(i))for i in stockBook]))
+            stockBook.sort()
+            answer = stockBook
+            stockBook = []
+        else:
+            answer= 0
+        return answer
+
+    def _stockBookPreorder(self, node):
+        global stockBook
+
+        if node is not None: #출력 형식과 출력 정보 담기 필요
+            temp = []
+            temp.append(node.bookNum)
+            temp.append(node.bookName)
+            temp.append(node.price)
+            temp.append(node.num)
+            stockBook.append(temp)
+            self._stockBookPreorder(node.left)
+            self._stockBookPreorder(node.right)
 
     def saledInfo(self):
-        return
+        global saledBook #재고목록의 책을 담을 임시 전역변수 stockBook
+
+        self._saledBookPreorder(self.rootSaled)
+        if saledBook!=[]:
+            list(set([tuple(set(i))for i in saledBook]))
+            saledBook.sort()
+            answer = saledBook
+            saledBook = []
+        else:
+            answer= 0
+        return answer
+
+    def _saledBookPreorder(self, node):
+        global saledBook
+
+        if node is not None:
+            temp = []
+            temp.append(node.bookNum)
+            temp.append(node.bookName)
+            temp.append(node.price)
+            temp.append(node.num)
+            saledBook.append(temp)
+            self._saledBookPreorder(node.left)
+            self._saledBookPreorder(node.right)
 
 T=BST()
 while True:
     command = input().split()
-    if command[0] == 'N':
+    if command[0] == 'N': #완
         T.insert(command[1], command[2], command[3], command[4])
         # 재고에 insert: T.insert(도서번호, 도서이름, 가격, 수량)
         # 신규도서가 재고도서 목록에 있을 경우 "error: 1" 출력
 
-    elif command[0] == 'R':
+    elif command[0] == 'R': #완
         T.add(command[1], command[2])
         # 기존에 등록된 도서의 수량이 입고: T.add(도서번호, 수량) : 덮어씌우기
         # 도서번호의 도서가 재고도서 목록에 없을 경우 "error: 2" 출력 
 
-    elif command[0] == 'S':
+    elif command[0] == 'S': #50% 완 -> saledNode로 입력이 되는 지만 확인되면 완료
         size=T.sale(command[1], command[2])
         # 판매된 도서번호와 도서 권 수 입력(Tree 내부에서 해당 key값을 찾은 뒤 업데이트 : 덮어씌우기)
         # 업데이트하면서 L을 위해 따로 리스트나 트리 생성 필요
         # 입력되는 도서번호가 재고도서 목록에 없을 경우 "error: 2" 출력
         # 판매수량이 재고수량보다 많을 경우 "error: 3" 출력
 
-    elif command[0] == 'D':
+    elif command[0] == 'D': #완
         T.delete(command[1])
         # 재고에서 삭제: T.delete(도서번호)
         # 입력되는 도서번호가 재고도서 목록에 없을 경우 "error: 2" 출력
 
-    elif command[0] == 'I':
-        print(" ".join(T.search(command[1])))
+    elif command[0] == 'I': #완
+        try:
+            print(" ".join(T.search(command[1])))
+        except TypeError:
+            pass
         # 입력되는 도서번호의 재고상태(도서번호, 이름, 가격, 재고수량) 출력
         # 재고가 0일 때도 출력
         # 입력되는 도서번호가 재고도서 목록에 없을 경우 "error: 2" 출력
 
-    elif command[0] == 'P':
+    elif command[0] == 'P': #완
         if T.printAll() == 0:
-            print("Tree doesn't have any elements")
+            pass
         else:
-            print(" ".join(T.printAll()))
+            result = T.printAll()
+            for i in result:
+                print(" ".join(i))
         # 재고의 원소들을 오름차순으로 출력: T.print() , "도서번호 이름 가격 재고수량" 출력 (key : 도서번호 기준 오름차순)
         # 재고가 0일 때도 출력
     
-    elif command[0] == 'L':
-        print(" ".join(T.SaledInfo()))
+    elif command[0] == 'L': 
+        if T.saledInfo() == 0:
+            pass
+        else:
+            result = T.saledInfo()
+            for i in result:
+                print(" ".join(i))
+        #print(" ".join(T.saledInfo()))
         # 판매한 모든 도서의 판매정보를 출력: T.saledInfo(), "도서번호 이름 가격 판매수량" 출력 (key : 도서번호 기준 오름차순)
 
-    elif command[0] == 'Q':
+    elif command[0] == 'Q': 
         break
     else:
         continue
