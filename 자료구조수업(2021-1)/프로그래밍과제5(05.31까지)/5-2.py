@@ -173,7 +173,7 @@ class BST: #이진탐색트리
         return answer
 
     def _stockBookPreorder(self, node):#재고도서 전위순회
-        global stockBook #재고목록의 책을 담을 임시 전역변수 stockBook
+        global stockBook #재고목록의 책을 담을 임시 전역변수 stockB ook
 
         if node is not None: #빈노드가 아니라면 전위순회
             temp = [] #임시 리스트(2차원 배열로 만들기 위해 각 Node의 데이터를 1차원 리스트로 저장)
