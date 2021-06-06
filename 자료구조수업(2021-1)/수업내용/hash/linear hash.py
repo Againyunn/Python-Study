@@ -14,7 +14,7 @@ class Dictionary:
         while True:
             if self.keyList[i] == None:
                 self.keyList[i] = key
-                self.keyList[i] = value
+                self.valueist[i] = value
                 return
             
             if self.keyList[i] == key:
