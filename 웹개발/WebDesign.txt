@@ -1,0 +1,13 @@
+BootStrape :
+    https://getbootstrap.com/
+
+BootsWatch :
+    https://bootswatch.com/
+
+*BootStrap을 이용할 때 주의 사항:
+    각 BootStrap의 버전이 매번 변경되므로, 개발자가 디자인적 요소를 개발한 시점에 사용한 Bootstrap원본 링크(처음엔 서버에 저장되어 있는 코드)를
+    Local PC의 저장소로 html형태로 담아서 저장한 뒤에,
+    CSS href 나 scr로서 원본 소스를 이용할 일이 있을 때 로컬에 저장된 html을 이용해야한다.
+
+    이렇게 조치를 하지 않으면, 향후 부트스트랩의 원본 파일이 "BootStrap"관리자에 의해 변경되었을 때 내가 부트스트랩을 활용해서 만든 웹 사이트에 에러 발생 가능
+    
