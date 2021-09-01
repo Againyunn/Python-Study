@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d7373d29-14d4-495b-817e-80935804c1f3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/Python-Study.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/알고리즘수업(2021-2).iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GCD문제/GCD.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python 개인공부/python 외부 데이터 연동/파이썬 외부 데이터와 연동 방법.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../그누빌/알고리즘/2차/체육복 풀이.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../실험실/03.20.py" beforeDir="false" afterPath="$PROJECT_DIR$/../실험실/03.20.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../알고리즘수업(2021-1)/가장큰 값 두 개 찾기/가장 큰 값 두 개 찾기.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../알고리즘수업(2021-1)/유일성검사_시간복잡도체험(03.11)/201703262정재윤_유일성 문제.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../알고리즘수업(2021-1)/유일성검사_시간복잡도체험(03.11)/유일성검사(제출용).py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../알고리즘수업(2021-1)/유일성검사_시간복잡도체험(03.11)/유일성검사_시간복잡도체험(03.11).py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../알고리즘수업(2021-1)/유일성검사_시간복잡도체험(03.11)/재귀알고리즘/list A의 가장 큰 수 구하기.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1xX1XvUenPOGS0kB6xBcBjLjBDI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="GCD" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="알고리즘수업(2021-2)" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GCD문제" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GCD문제/GCD.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.GCD" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d7373d29-14d4-495b-817e-80935804c1f3" name="Default Changelist" comment="" />
+      <created>1630486662127</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1630486662127</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
