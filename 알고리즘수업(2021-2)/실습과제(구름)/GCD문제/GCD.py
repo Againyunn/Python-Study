@@ -23,6 +23,17 @@ def gcd_rec(a, b):
     else:
         return gcd_rec(a, b-a)
 
+def gcd_rec2(a, b): #성주 풀이(조교)
+    if a<b:
+        tmp=a
+        a=b
+        b=tmp
+
+    if b<=0:
+        return a
+    else:
+        return gcd_rec2(a-b, b)
+
 
 # a, b를 입력받는다
 # gcd_sub, gcd_mod, gcd_rec을 각각 호출하여, x, y, z에 리턴값을 저장한다
@@ -33,5 +44,6 @@ b = int(b)
 x = gcd_sub(a, b)
 y = gcd_mod(a, b)
 z = gcd_rec(a, b)
+zz = gcd_rec2(a, b)
 
-print(x, y, z)
+print(x, y, z, zz)
