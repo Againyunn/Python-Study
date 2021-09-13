@@ -1,0 +1,14 @@
+<깃 허브 새로운 디렉토리를 리포지포리로 입력>
+git init
+git commit -m 
+git branch -M main
+git remote add 리포지토리명(origin) 리포지토리주소
+git push -u origin main
+
+<깃 허브 새로운 디렉토리를 리포지포리로 입력>
+git init
+git commit -m 
+git branch -M main
+git remote add 리포지토리명(origin) 리포지토리주소
+git push -u origin main
+
