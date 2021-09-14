@@ -1,0 +1,8 @@
+tensorflow에 갑작스러운 error 발생 시 대처 법:
+    https://gmnam.tistory.com/159
+
+AI기초 수업 시 사용할 예제 모음:
+    https://github.com/aymericdamien/TensorFlow-Examples
+
+anaconda에 필요한 추가적인 패키지 다운로드 받는 법:
+    google 검색 창에 "conda 패키지 명" 입력한 뒤, https://anaconda.org/ 공식 홈페이지에서 window 버전으로 pip source 확인 후 다운로드
