@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7373d29-14d4-495b-817e-80935804c1f3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/실습과제(구름)/재귀/비재귀.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/실습과제(구름)/재귀/재귀.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +29,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="3" />
+  </component>
   <component name="ProjectId" id="1xX1XvUenPOGS0kB6xBcBjLjBDI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -37,10 +42,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Ai-Study" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Capstone-Design" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\github\kapchikachi\kapchikachi" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\github\Python-Study\알고리즘수업(2021-2)\실습과제(구름)" />
     </key>
@@ -88,7 +96,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="GCD" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="비재귀" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="알고리즘수업(2021-2)" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -96,11 +104,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GCD문제" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/실습과제(구름)/재귀" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GCD문제/GCD.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/실습과제(구름)/재귀/비재귀.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -109,7 +117,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="prefixSum" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="재귀" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="알고리즘수업(2021-2)" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -117,11 +125,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/실습과제(구름)/prefixSum" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/실습과제(구름)/재귀" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/실습과제(구름)/prefixSum/prefixSum.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/실습과제(구름)/재귀/재귀.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -156,8 +164,6 @@
         <item itemvalue="Python.test" />
         <item itemvalue="Python.다항식 (1)" />
         <item itemvalue="Python.다항식" />
-        <item itemvalue="Python.prefixSum" />
-        <item itemvalue="Python.GCD" />
       </list>
     </recent_temporary>
   </component>
