@@ -56,8 +56,10 @@ def merge_sort(B, first, last):
             j += 1
 
     for a in range(i, mid + 1):
+        Ms += 1  # 교환
         tmp.append(B[a])
     for b in range(j, last + 1):
+        Ms += 1  # 교환
         tmp.append(B[b])
     for c in range(first, last + 1):
         Ms += 1  # 교환
