@@ -1,7 +1,7 @@
 import socket
 from _thread import *
 
-server_socket = socket.socket()
+server_socket = socket.socket() #기본은 TCP로 설정
 host ='localhost' #"127.0.0.1"  #과 동일하다
 port = 12345
 threadCount = 0
