@@ -1,0 +1,11 @@
+venv/
+.idea/
+
+*.pyc
+
+db.sqlite3
+
+migrations/
+_media/
+
+my_site_prj/settings_production.py
