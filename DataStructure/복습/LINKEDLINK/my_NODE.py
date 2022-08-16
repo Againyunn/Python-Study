@@ -1,5 +1,5 @@
-class NODE():
-    def __init__(self, elem, link = None):
+class NODE:
+    def __init__(self, elem = None, link = None):
         self.data = elem
         self.link = link 
     
