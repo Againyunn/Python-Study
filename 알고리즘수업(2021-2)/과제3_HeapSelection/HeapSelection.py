@@ -19,6 +19,8 @@ A = [int(x) for x in input().split()]
 heapq.heapify(A) # A is now a min-heap
 print(solve(A, k))
 
+
+
 ''' 힙이 최대힙/최소힙 두가지 경우로 구현될 수 있음을 활용하여 최악의 경우(최소힙일 때 가장 큰 값을 호출할 경우) 수행시간을 단축한 알고리즘
 
 	case1
